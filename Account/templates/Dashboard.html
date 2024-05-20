@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+{% if user.first_name and user.last_login %}
+    <header>{{ user.first_name }} {{ user.last_login }}</header>
+    {% else %}
+	<header>{{ user.email }}</header>
+{% endif %}
+<img src="{{ user_plus.avatar.url }}">
+<p>{{ user_plus.about_user }}</p>
+<a href="{% url 'edit_dashboard' %}"><button>Edit</button></a>
+</body>
+</html>

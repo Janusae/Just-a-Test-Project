@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+<header style="text-align: center">{{ data.name }}</header><br>
+<h3>Create Date : {{ data.created_date }}</h3>
+<h4>{{ data.short_description }}</h4>
+<p>{{ data.long_description }}</p>
+<br>
+{% for s in similar %}
+	<a href="{% url 'Detail_Product' pk=s.pk name=s.name %}"><li>{{ s.name }}</li></a>
+{% endfor %}
+
+</body>
+</html>

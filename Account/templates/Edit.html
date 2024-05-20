@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Page</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    {% for f in form %}
+	{{ f.label }}
+    {{ f }}<br><br>
+{% endfor %}
+<button>Send</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>We have {{ data.count }} Product for you!</header>
+{% for d in data %}
+	<div>
+        <a href="{% url 'Detail_Product' pk=d.pk name=d.name %}"><h2>{{ d.name }} Published in {{ d.created_date }}</h2><br></a>
+        <h3>Tags : {% for d in d.tag.all%}
+
+            <a href="{% url 'Search_Tag' tag=d.name %}">{{ d.name   }}</a>
+            {% if not forloop.last %}
+            	,
+            {% endif %}
+
+        {% endfor %}
+        </h3>
+    </div>
+    <hr>
+{% endfor %}
+
+</body>
+</html>

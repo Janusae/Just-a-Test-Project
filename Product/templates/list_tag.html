@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+{% if data %}
+   <h1> Here are some result that relate to  "  {{ tag }} ": </h1><br>
+    {% for d in data %}
+	<a href="{% url 'Detail_Product' name=d.name pk=d.id %}"><li>{{ d.name }}</li></a>
+{% endfor %}
+{% endif %}
+</ul>
+
+
+</body>
+</html>
